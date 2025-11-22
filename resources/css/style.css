@@ -403,49 +403,158 @@ footer {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
+}
+.footer-links li {
+  margin: 0;
 }
 .footer-links li a {
   color: #ccc;
   text-decoration: none;
-}
-.footer-links li a:hover {
-  text-decoration: underline;
-}
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  text-align: center; /* centraliza conteúdo inline (logos) */
+  position: relative;
 }
 
-/* Coloca as duas imagens lado a lado e responsivas; quebram para a próxima linha quando necessário */
+/* Underline animado para footer links, igual ao nav-links */
+.footer-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--brand-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+  opacity: 0.85;
+}
+
+.footer-links li a:hover::after,
+.footer-links li a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Container flexbox para logos lado a lado e responsivo */
+.img-jogo-classificacao,
+.console-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  list-style: none;
+  padding: 0;
+}
+
 .footer-logo,
-.rating-logo {
-  display: inline-block;
+.rating-logo,
+.steam,
+.epic,
+.xbox,
+.playstation,
+.nintendo,
+.app-store {
   width: auto;
-  margin: 0.5rem 0.75rem;
-  vertical-align: middle;
+  height: auto;
+  object-fit: contain;
 }
 
 .footer-logo {
-  height: clamp(48px, 8vw, 80px);
-}
-.rating-logo {
-  height: clamp(40px, 6.5vw, 60px);
+  height: clamp(60px, 10vw, 80px);
 }
 
-@media (max-width: 420px) {
-  .footer-logo,
-  .rating-logo {
-    margin: 0.4rem 0.5rem;
+.steam,
+.epic,
+.xbox,
+.playstation,
+.nintendo,
+.app-store {
+  height: clamp(45px, 7vw, 60px);
+}
+
+.rating-logo {
+  height: clamp(48px, 8vw, 60px);
+}
+
+.console-links li {
+  margin: 0;
+}
+
+.console-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .img-jogo-classificacao,
+  .console-links {
+    gap: 0.75rem;
   }
   .footer-logo {
-    height: clamp(40px, 10vw, 64px);
+    height: clamp(50px, 12vw, 70px);
+  }
+  .steam,
+  .epic,
+  .xbox,
+  .playstation,
+  .nintendo,
+  .app-store {
+    height: clamp(40px, 9vw, 55px);
   }
   .rating-logo {
-    height: clamp(32px, 8vw, 48px);
+    height: clamp(40px, 10vw, 55px);
   }
 }
+
+@media (max-width: 480px) {
+  .img-jogo-classificacao,
+  .console-links {
+    gap: 0.5rem;
+  }
+  .footer-logo {
+    height: clamp(45px, 14vw, 60px);
+  }
+  .steam,
+  .epic,
+  .xbox,
+  .playstation,
+  .nintendo,
+  .app-store {
+    height: clamp(35px, 11vw, 50px);
+  }
+  .rating-logo {
+    height: clamp(36px, 12vw, 48px);
+  }
+}
+
+/* Copyright - centralizado e responsivo */
+.copyright {
+  text-align: center;
+  margin: 1.5rem 0 0 0;
+  padding: 0 1rem;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  line-height: 1.6;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .copyright {
+    margin: 1rem 0 0 0;
+    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .copyright {
+    margin: 0.8rem 0 0 0;
+    padding: 0 0.75rem;
+    font-size: clamp(0.7rem, 2.8vw, 0.85rem);
+  }
+}
+
 .conect {
   display: flex;
   align-items: center;
