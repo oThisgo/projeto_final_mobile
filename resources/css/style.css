@@ -22,9 +22,12 @@
 }
 
 .timeline-content {
-	min-width: 220px;
-	max-width: 340px;
-	margin: 0 0 0 16px;
+  min-width: 220px;
+  max-width: 380px;
+  margin: 0 auto;
+  transition: box-shadow 0.3s, transform 0.3s, max-height 0.4s cubic-bezier(.23,1.01,.32,1);
+  max-height: 120px;
+  overflow: hidden;
 }
 
 .timeline-event:nth-child(even) .timeline-content {
@@ -80,23 +83,35 @@
 .timeline-content {
 	display: block;
 	opacity: 1;
-	max-height: none;
-	overflow: visible;
-	transition: none;
+	max-height: 120px;
+	overflow: hidden;
+	transition: max-height 0.4s cubic-bezier(.23,1.01,.32,1);
 	margin-left: 0;
+	max-height: 400px;
 }
 
 .timeline-details {
-	margin-top: 1rem;
-	font-size: 0.98rem;
-	color: #ccc;
-	border-top: 1px solid #333;
-	padding-top: 0.7rem;
+  	margin-top: 1rem;
+  	font-size: 0.98rem;
+  	color: #ccc;
+  	border-top: 1px solid #333;
+  	padding-top: 0.7rem;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s, max-height 0.4s cubic-bezier(.23,1.01,.32,1);
+}
+
+.timeline-event:hover .timeline-details {
+    opacity: 1;
+    max-height: 200px;
 }
 
 .timeline-toggle[aria-expanded="true"] .timeline-year {
 	background: #fff;
 	color: #c00;
+  	box-shadow: 0 6px 32px #0005;
+  	transform: scale(1.04);
+  	max-height: 400px;
 }
 
 @media (max-width: 700px) {
@@ -107,7 +122,18 @@
 	
 	.timeline-content {
 		padding: 0.8rem 0.7rem;
+		opacity: 1;
+		max-height: none !important;
+		overflow: visible !important;
+		transition: none;
 	}
+	
+	.timeline-details {
+		opacity: 1 !important;
+		max-height: none !important;
+		transition: none;
+	}
+  
 }
 
 
@@ -284,6 +310,14 @@ body::-webkit-scrollbar-thumb:hover, .timeline-container::-webkit-scrollbar-thum
 		text-align: center !important;
 		padding: 1.1rem 1rem;
 		margin: 0 auto;
+		max-height: none !important;
+		overflow: visible !important;
+	}
+
+	.timeline-details {
+		opacity: 1 !important;
+		max-height: none !important;
+		transition: none;
 	}
 
 }
