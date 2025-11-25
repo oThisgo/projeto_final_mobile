@@ -46,6 +46,7 @@ $(function(){
                 timeline.scrollLeft = scrollLeft - walk;
             });
         }
+
     const $icon = $('.js--mobile-nav-icon');
     const $nav = $('.js--main-nav');
 
