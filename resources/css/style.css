@@ -771,7 +771,7 @@ footer {
 .playstation,
 .nintendo,
 .app-store {
-  height: clamp(45px, 7vw, 60px);
+  height: clamp(32px, 5vw, 40px);
 }
 
 .rating-logo {
@@ -803,7 +803,7 @@ footer {
   .playstation,
   .nintendo,
   .app-store {
-    height: clamp(40px, 9vw, 55px);
+    height: clamp(28px, 7vw, 36px);
   }
   .rating-logo {
     height: clamp(40px, 10vw, 55px);
@@ -824,7 +824,7 @@ footer {
   .playstation,
   .nintendo,
   .app-store {
-    height: clamp(35px, 11vw, 50px);
+    height: clamp(22px, 9vw, 32px);
   }
   .rating-logo {
     height: clamp(36px, 12vw, 48px);
