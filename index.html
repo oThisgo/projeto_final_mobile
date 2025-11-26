@@ -28,7 +28,7 @@
             <li><a href="#personagens">Personagens</a></li>
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#comunidade">Comunidade</a></li>
-            <li><a href="#" class="btn-nav">JOGUE GRATUITAMENTE</a></li>
+            <li><a href="download.html" class="btn-nav">JOGUE GRATUITAMENTE</a></li>
         </ul>
     </nav>
     <header class="hero-header">
@@ -38,7 +38,7 @@
             <p>Junte-se a mais de 70 milhões de jogadores neste jogo dinâmico de ação e de tiro em terceira pessoa.
                 Colete itens, prepare seu arsenal e trilhe o seu próprio caminho através do extenso Sistema de Origem.
             </p>
-            <a href="#">JOGUE GRATUITAMENTE AGORA</a>
+            <a href="download.html">JOGUE GRATUITAMENTE AGORA</a>
         </div>
     </header>
 
@@ -255,6 +255,115 @@
         
     </section>
 
+    <!-- Seção de Comunidade -->
+    <section class="community-section" id="comunidade">
+        <div class="community-container">
+            <div class="community-header">
+                <h2>Join the Vanguard</h2>
+                <p>Answer the call and connect with a global community of elite players.</p>
+            </div>
+            
+            <div class="community-content">
+                <div class="community-form-wrapper">
+                    <h3>Community Sign-Up</h3>
+                    <form id="communityForm" class="community-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nickname">In-Game Nickname</label>
+                                <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="platform">Platform</label>
+                                <select id="platform" name="platform" required>
+                                    <option value="">Select platform</option>
+                                    <option value="pc">PC</option>
+                                    <option value="playstation">PlayStation</option>
+                                    <option value="xbox">Xbox</option>
+                                    <option value="nintendo">Nintendo Switch</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input type="number" id="age" name="age" placeholder="Enter your age" min="13" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Favorite Mode</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="mode" value="pve" required>
+                                    <span>PvE Missions</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="mode" value="pvp">
+                                    <span>PvP Arena</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="mode" value="raids">
+                                    <span>Raids</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" id="country" name="country" placeholder="Enter your country" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message (Optional)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Share your thoughts..."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" id="newsletter">
+                                <span>I want to receive news and updates.</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="form-submit-btn">Enlist Now</button>
+                    </form>
+                </div>
+                
+                <div class="community-info">
+                    <div class="community-card">
+                        <h4>From the Community</h4>
+                        <div class="community-image">
+                            <img src="resources/img/timeline-2022.jpg" alt="Community Highlight">
+                            <p class="image-caption">"Epic moment captured by @PlayerOne" via Twitter</p>
+                        </div>
+                    </div>
+                    
+                    <div class="community-card patch-notes">
+                        <h4>Latest Patch Notes</h4>
+                        <h5>VANGUARD v1.5.2 - "CYBERPULSE"</h5>
+                        <ul>
+                            <li>New Map: Neo-Kyoto Power Plant</li>
+                            <li>Agent Rebalance: Volt & Shade</li>
+                            <li>Weapon Tuning: Nova Rifle damage increased by 5%</li>
+                            <li>Bug Fixes and Performance Improvements</li>
+                        </ul>
+                        <a href="#" class="read-more">Read Full Notes →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
             <bold class="conect">CONECTE-SE COM OS OUTROS TENNOS</bold>
@@ -271,6 +380,8 @@
                 <li><a href="#"><img src="vendors/img/nintendo.png" alt="Nintendo Switch" class="nintendo" /></a></li>
                 <li><a href="#"><img src="vendors/img/app-store.png" alt="App Store" class="app-store" /></a></li>
             </ul>
+
+            <!-- colocar dentro de uma tag nav  -->
             <ul class="footer-links">
                 <li><a href="#">Suporte</a></li>
                 <li><a href="#">Imprensa</a></li>
