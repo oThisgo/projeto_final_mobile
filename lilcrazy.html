@@ -16,7 +16,7 @@
      <nav class="navbar">
           <div class="nav-brand">
                <img src="vendors/img/logo.png" alt="Logo" class="brand-logo" />
-               <span class="brand-name">WARFRAME</span>
+               <span class="brand-name"><a class="logo-name" href="index.html">WARFRAME</a></span>
           </div>
           <input type="checkbox" id="nav-toggle" class="nav-toggle" />
           <label for="nav-toggle" class="nav-toggle-label">
@@ -30,21 +30,143 @@
                <li><a href="#" class="btn-nav">JOGUE GRATUITAMENTE</a></li>
           </ul>
      </nav>
-     <section class="agent-profile">
-          <h1>Perfil do Agente</h1>
-          <div class="agent-details">
-               <img src="vendors/img/agentes/agente1_hero_page.jpg" alt="Foto do Agente" class="agent-photo" />
-               <div class="agent-info">
-                    <h2>Lil Crazy</h2>
-                    <p><strong>Função:</strong> Terrorista.</p>
-                    <p><strong>Habilidades:</strong> Furtividade.</p>
-                    <p><strong>História:</strong> Após levar umm chifre de sua ex-esposa e perder o emprego, Afonso (seu
-                         nome real)
-                         ficou obsecado com ideias extremistas o que levou a entrar em insanidade, criando um alter ego
-                         conhecido como Lil Crazy.</p>
+     
+     <!-- Hero Section with Character Background -->
+     <section class="character-hero">
+          <div class="character-bg-overlay"></div>
+          <img src="vendors/img/agentes/agente1_hero_page.jpg" alt="Banshee Background" class="character-bg-image" />
+          
+          <div class="character-content">
+               <div class="character-header">
+                    <h1 class="character-name">BANSHEE</h1>
+                    <p class="character-description">
+                         O grito de Banshee é um prenúncio da morte. Utilizando ataques sônicos, 
+                         ela controla o campo de guerra e identifica as vulnerabilidades dos inimigos. 
+                         Suas habilidades pelas orelhas podem quebrar pontes, parar planetas para trás.
+                    </p>
+                    <div class="character-actions">
+                         <a href="#" class="btn-primary">BANSHEE</a>
+                         <a href="#" class="btn-secondary">BANSHEE PRIME</a>
+                    </div>
+               </div>
+
+               <div class="character-info-grid">
+                    <!-- Stats Block -->
+                    <div class="info-card stats-card">
+                         <div class="card-content">
+                              <div class="stat-row">
+                                   <span class="stat-label">Vida</span>
+                                   <span class="stat-value">100 → 300</span>
+                              </div>
+                              <div class="stat-row">
+                                   <span class="stat-label">Escudo</span>
+                                   <span class="stat-value">225 → 675</span>
+                              </div>
+                              <div class="stat-row">
+                                   <span class="stat-label">Armadura</span>
+                                   <span class="stat-value">15 → 45</span>
+                              </div>
+                              <div class="stat-row">
+                                   <span class="stat-label">Resistência</span>
+                                   <span class="stat-value">100 → 400</span>
+                              </div>
+                              <div class="stat-row">
+                                   <span class="stat-label">Energia</span>
+                                   <span class="stat-value">175 → 225</span>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- Gameplay Style Block -->
+                    <div class="info-card gameplay-card">
+                         <h3 class="card-title">ESTILO DE JOGO</h3>
+                         <div class="card-content">
+                              <p class="gameplay-text">
+                                   <strong>Foco:</strong> Controle de Grupo
+                              </p>
+                              <p class="gameplay-text">
+                                   <strong>Complexidade:</strong> ★★★○○
+                              </p>
+                         </div>
+                    </div>
+
+                    <!-- Lore/Bio Block -->
+                    <div class="info-card lore-card">
+                         <h3 class="card-title">DICA</h3>
+                         <div class="card-content">
+                              <p class="lore-text">
+                                   Além de silenciar todas as suas armas equipadas, a habilidade passiva da Banshee 
+                                   também silencia as armas de seus Companheiros Robóticos, oferecendo vantagens 
+                                   únicas no combate furtivo.
+                              </p>
+                         </div>
+                    </div>
+               </div>
+
+               <!-- Abilities Section -->
+               <div class="abilities-section">
+                    <h2 class="section-title">HABILIDADES</h2>
+                    <div class="abilities-grid">
+                         <div class="ability-card">
+                              <div class="ability-image">
+                                   <img src="vendors/img/agentes/ability1.jpg" alt="Sonic Boom" />
+                              </div>
+                              <div class="ability-icon">
+                                   <span class="icon-wave">🔊</span>
+                              </div>
+                              <h4 class="ability-name">ESTRONDO SÔNICO</h4>
+                              <p class="ability-description">
+                                   A Banshee desfecha uma onda de choque sônica, que empurra os inimigos 
+                                   atingidos com estilhaços de estranhos energias.
+                              </p>
+                         </div>
+
+                         <div class="ability-card">
+                              <div class="ability-image">
+                                   <img src="vendors/img/agentes/ability2.jpg" alt="Sonar" />
+                              </div>
+                              <div class="ability-icon">
+                                   <span class="icon-sonar">🎯</span>
+                              </div>
+                              <h4 class="ability-name">SONAR</h4>
+                              <p class="ability-description">
+                                   Utilizando seu poder auditivo, a habilidade Sonar da Banshee revela 
+                                   inimigos através de ondas sonoras. Pontos fracos para dar e sua aliados.
+                              </p>
+                         </div>
+
+                         <div class="ability-card">
+                              <div class="ability-image">
+                                   <img src="vendors/img/agentes/ability3.jpg" alt="Silence" />
+                              </div>
+                              <div class="ability-icon">
+                                   <span class="icon-silence">💤</span>
+                              </div>
+                              <h4 class="ability-name">SILENCIAR</h4>
+                              <p class="ability-description">
+                                   A habilidade Silenciar envolve a Banshee com uma aura que atordoa os 
+                                   inimigos, tornando a deixa confusos e silenciosos.
+                              </p>
+                         </div>
+
+                         <div class="ability-card">
+                              <div class="ability-image">
+                                   <img src="vendors/img/agentes/ability4.jpg" alt="Sound Quake" />
+                              </div>
+                              <div class="ability-icon">
+                                   <span class="icon-quake">👁️</span>
+                              </div>
+                              <h4 class="ability-name">TERREMOTO SONORO</h4>
+                              <p class="ability-description">
+                                   Canalizando toda a sua energia acústica no ambiente ao seu redor, a 
+                                   Banshee canaliza ultrassônicos no solo, fazendo com que ele vibre violentamente.
+                              </p>
+                         </div>
+                    </div>
                </div>
           </div>
      </section>
+
      <footer>
           <div class="footer-content">
                <bold class="conect">CONECTE-SE COM OS OUTROS TENNOS</bold>
