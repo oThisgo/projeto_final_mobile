@@ -110,29 +110,42 @@ $(function(){
             });
         });
     }
-});
 
-// Formulário de comunidade
-const communityForm = document.getElementById('communityForm');
-if (communityForm) {
-    communityForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const fullName = document.getElementById('fullName').value.trim();
-        const nickname = document.getElementById('nickname').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const platform = document.getElementById('platform').value;
-        const age = document.getElementById('age').value;
-        const country = document.getElementById('country').value.trim();
-        const modeSelected = document.querySelector('input[name="mode"]:checked');
-        if (!fullName || !nickname || !email || !platform || !age || !country || !modeSelected) {
-            alert('Please fill in all required fields.');
-            return;
-        }
-        if (age < 13) {
-            alert('You must be at least 13 years old to join.');
-            return;
-        }
-        localStorage.setItem('communitySignup', JSON.stringify({ fullName, nickname, email, platform, age, country, mode: modeSelected.value, timestamp: new Date().toISOString() }));
-        window.location.href = 'thank-you.html';
-    });
-}
+    // FormulÃ¡rio de comunidade
+    const communityForm = document.getElementById('communityForm');
+    if (communityForm) {
+        communityForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value.trim();
+            const nickname = document.getElementById('nickname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const platform = document.getElementById('platform').value;
+            const age = document.getElementById('age').value;
+            const country = document.getElementById('country').value.trim();
+            const modeSelected = document.querySelector('input[name="mode"]:checked');
+            
+            if (!fullName || !nickname || !email || !platform || !age || !country || !modeSelected) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if (age < 13) {
+                alert('You must be at least 13 years old to join.');
+                return;
+            }
+            
+            localStorage.setItem('communitySignup', JSON.stringify({ 
+                fullName, 
+                nickname, 
+                email, 
+                platform, 
+                age, 
+                country, 
+                mode: modeSelected.value, 
+                timestamp: new Date().toISOString() 
+            }));
+            
+            window.location.href = 'thank-you.html';
+        });
+    }
+});
