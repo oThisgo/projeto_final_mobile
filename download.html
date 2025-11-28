@@ -5,18 +5,21 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Download</title>
-     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&family=Stack+Sans+Notch:wght@200..700&display=swap"
-          rel="stylesheet">
-     <link rel="stylesheet" href="resources/css/style.css">
+     <link rel="icon" type="image/x-icon" href="favicon.ico">
+     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&family=Stack+Sans+Notch:wght@200..700&display=swap"
+          rel="stylesheet" media="print" onload="this.media='all'">
+     <link rel="preload" href="resources/css/style.min.css" as="style">
+     <link rel="stylesheet" href="resources/css/style.min.css">
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
      <nav class="navbar">
           <div class="nav-brand">
-               <img src="vendors/img/logo.png" alt="Logo" class="brand-logo" />
+               <img src="vendors/img/logo.png" alt="Logo" class="brand-logo" / loading="lazy" decoding="async">
                <span class="brand-name"><a class="logo-name" href="index.html">WARFRAME</a></span>
           </div>
           <input type="checkbox" id="nav-toggle" class="nav-toggle" />
@@ -33,19 +36,17 @@
           </ul>
      </nav>
      <header class="hero-header download-hero">
-          <img src="resources/img/hero-fallback.gif" alt="Hero background" class="hero-bg" />
+          <picture>
+               <source media="(max-width: 480px)" srcset="resources/img/hero-fallback-mobile.jpg" type="image/jpeg">
+               <source media="(max-width: 768px)" srcset="resources/img/hero-fallback-tablet.jpg" type="image/jpeg">
+               <source media="(min-width: 769px)" srcset="resources/img/hero-fallback.gif" type="image/gif">
+               <img src="resources/img/hero-fallback.gif" alt="Hero background" class="hero-bg" loading="lazy" decoding="async" />
+          </picture>
           <div class="hero-content download-content">
                <h1>Download and Play Now</h1>
                <p class="hero-subtitle">Your Legend Awaits.</p>
                <a href="#" class="download-primary-btn">Download for Windows</a>
                <p class="file-size">File size: ~25.4 GB</p>
-               <div class="platform-icons">
-                    <span class="platform-text">Also available on</span>
-                    <div class="icons-group">
-                         <img src="vendors/img/xbox-one.png" alt="Xbox" class="platform-icon" />
-                         <img src="vendors/img/playstation.png" alt="PlayStation" class="platform-icon" />
-                    </div>
-               </div>
           </div>
      </header>
      <div class="system-minimum-requirements">
@@ -88,16 +89,16 @@
             <bold class="conect">CONECTE-SE COM OS OUTROS TENNOS</bold>
             <hr>
             <div class="img-jogo-classificacao">
-                <img src="vendors/img/logo.png" alt="Logo" class="footer-logo" />
-                <img src="vendors/img/classificacaoJogo.png" alt="Classificação do Jogo" class="rating-logo" />
+                <img src="vendors/img/logo.png" alt="Logo" class="footer-logo" / loading="lazy" decoding="async">
+                <img src="vendors/img/classificacaoJogo.png" alt="Classificação do Jogo" class="rating-logo" / loading="lazy" decoding="async">
             </div>
             <ul class="console-links">
-                <li><a href="#"><img src="vendors/img/steam.png" alt="Steam" class="steam" /></a></li>
-                <li><a href="#"><img src="vendors/img/epic_sem_fundo.png" alt="Epic Games" class="epic" /></a></li>
-                <li><a href="#"><img src="vendors/img/xbox-one.png" alt="Xbox One" class="xbox" /></a></li>
-                <li><a href="#"><img src="vendors/img/playstation.png" alt="PlayStation" class="playstation" /></a></li>
-                <li><a href="#"><img src="vendors/img/nintendo.png" alt="Nintendo Switch" class="nintendo" /></a></li>
-                <li><a href="#"><img src="vendors/img/app-store.png" alt="App Store" class="app-store" /></a></li>
+                <li><a href="#"><img src="vendors/img/steam.png" alt="Steam" class="steam" / loading="lazy" decoding="async"></a></li>
+                <li><a href="#"><img src="vendors/img/epic_sem_fundo.png" alt="Epic Games" class="epic" / loading="lazy" decoding="async"></a></li>
+                <li><a href="#"><img src="vendors/img/xbox-one.png" alt="Xbox One" class="xbox" / loading="lazy" decoding="async"></a></li>
+                <li><a href="#"><img src="vendors/img/playstation.png" alt="PlayStation" class="playstation" / loading="lazy" decoding="async"></a></li>
+                <li><a href="#"><img src="vendors/img/nintendo.png" alt="Nintendo Switch" class="nintendo" / loading="lazy" decoding="async"></a></li>
+                <li><a href="#"><img src="vendors/img/app-store.png" alt="App Store" class="app-store" / loading="lazy" decoding="async"></a></li>
             </ul>
             <ul class="footer-links">
                 <li><a href="support.html">Suporte</a></li>
@@ -112,7 +113,7 @@
                 donos.</p>
         </div>
     </footer>
-     <script src="resources/js/script.js" defer></script>
+     <script src="resources/js/script.min.js" defer></script>
 </body>
 
 </html>
