@@ -5,11 +5,32 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Lil Crazy</title>
-     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&family=Stack+Sans+Notch:wght@200..700&display=swap"
-          rel="stylesheet">
-     <link rel="stylesheet" href="resources/css/style.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&family=Stack+Sans+Notch:wght@200..700&display=swap"
+          rel="stylesheet" media="print" onload="this.media='all'">
+     <link rel="preload" href="resources/css/style.min.css" as="style">
+     <link rel="stylesheet" href="resources/css/style.min.css">
+     <style>
+          /* Otimização para prevenir layout shift nas habilidades */
+          .ability-image {
+               position: relative;
+               width: 100%;
+               height: 0;
+               padding-bottom: 56.25%; /* 16:9 aspect ratio */
+               background: rgba(0, 0, 0, 0.3);
+               overflow: hidden;
+          }
+          .ability-image img,
+          .ability-image video {
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+          }
+     </style>
 </head>
 
 <body>
@@ -23,18 +44,22 @@
                <span></span>
           </label>
           <ul class="nav-links">
-               <li><a href="#novidades">Novidades</a></li>
-               <li><a href="#jogo">Jogo</a></li>
-               <li><a href="#comunidade">Comunidade</a></li>
-               <li><a href="#guias">Guias</a></li>
-               <li><a href="#" class="btn-nav">JOGUE GRATUITAMENTE</a></li>
+               <li><a href="index.html#historia">História</a></li>
+               <li><a href="index.html#personagens">Personagens</a></li>
+               <li><a href="index.html#reviews">Reviews</a></li>
+               <li><a href="index.html#comunidade">Comunidade</a></li>
+               <li><a href="download.html" class="btn-nav">JOGUE GRATUITAMENTE</a></li>
           </ul>
      </nav>
      
      <!-- Hero Section with Character Background -->
      <section class="character-hero">
           <div class="character-bg-overlay"></div>
-          <img src="vendors/img/agentes/agente1_hero_page.jpg" alt="Banshee Background" class="character-bg-image" />
+          <picture>
+               <source media="(max-width: 480px)" srcset="vendors/img/agentes/agente1_hero_page-mobile.jpg" type="image/jpeg">
+               <source media="(max-width: 768px)" srcset="vendors/img/agentes/agente1_hero_page-tablet.jpg" type="image/jpeg">
+               <img src="vendors/img/agentes/agente1_hero_page.jpg" alt="Banshee Background" class="character-bg-image" loading="eager" decoding="async" />
+          </picture>
           
           <div class="character-content">
                <div class="character-header">
@@ -51,7 +76,10 @@
                          </div>
                     </div>
                     <div class="character-image-wrapper">
-                         <img src="vendors/img/agentes/agente1.png" alt="Banshee" class="character-agent-image" />
+                         <picture>
+                              <source media="(max-width: 768px)" srcset="vendors/img/agentes/agente1-mobile.png" type="image/png">
+                              <img src="vendors/img/agentes/agente1.png" alt="Banshee" class="character-agent-image" loading="lazy" decoding="async" />
+                         </picture>
                     </div>
                </div>
 
@@ -119,7 +147,12 @@
                     <div class="abilities-grid">
                          <div class="ability-card">
                               <div class="ability-image">
-                                   <img src="vendors/img/agentes/ability1.webp" alt="Sonic Boom" />
+                                   <!-- Opção 1: Imagem estática (mais leve) -->
+                                   <img src="vendors/img/agentes/ability1.gif" 
+                                        alt="Sonic Boom" 
+                                        loading="lazy" 
+                                        decoding="async" />
+                                   <!-- NOTA: Substitua por ability1-thumb.jpg após criar thumbnail -->
                               </div>
                               <div class="ability-icon">
                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -135,7 +168,10 @@
 
                          <div class="ability-card">
                               <div class="ability-image">
-                                   <img src="vendors/img/agentes/ability2.webp" alt="Sonar" />
+                                   <img src="vendors/img/agentes/ability2.gif" 
+                                        alt="Sonar" 
+                                        loading="lazy" 
+                                        decoding="async" />
                               </div>
                               <div class="ability-icon">
                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -153,7 +189,10 @@
 
                          <div class="ability-card">
                               <div class="ability-image">
-                                   <img src="vendors/img/agentes/ability3.webp" alt="Silence" />
+                                   <img src="vendors/img/agentes/ability3.gif" 
+                                        alt="Silence" 
+                                        loading="lazy" 
+                                        decoding="async" />
                               </div>
                               <div class="ability-icon">
                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -169,7 +208,10 @@
 
                          <div class="ability-card">
                               <div class="ability-image">
-                                   <img src="vendors/img/agentes/ability4.webp" alt="Sound Quake" />
+                                   <img src="vendors/img/agentes/ability4.gif" 
+                                        alt="Sound Quake" 
+                                        loading="lazy" 
+                                        decoding="async" />
                               </div>
                               <div class="ability-icon">
                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -192,8 +234,8 @@
                <bold class="conect">CONECTE-SE COM OS OUTROS TENNOS</bold>
                <hr>
                <div class="img-jogo-classificacao">
-                    <img src="vendors/img/logo.png" alt="Logo" class="footer-logo" />
-                    <img src="vendors/img/classificacaoJogo.png" alt="Classificação do Jogo" class="rating-logo" />
+                    <img src="vendors/img/logo.png" alt="Logo" class="footer-logo" loading="lazy" decoding="async" />
+                    <img src="vendors/img/classificacaoJogo.png" alt="Classificação do Jogo" class="rating-logo" loading="lazy" decoding="async" />
                </div>
                <ul class="console-links">
                     <li><a href="#"><img src="vendors/img/steam.png" alt="Steam" class="steam" /></a></li>

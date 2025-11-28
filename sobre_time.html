@@ -5,17 +5,18 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Sobre o Time</title>
-     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&family=Stack+Sans+Notch:wght@200..700&display=swap"
-          rel="stylesheet">
-     <link rel="stylesheet" href="resources/css/style.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&family=Stack+Sans+Notch:wght@200..700&display=swap"
+          rel="stylesheet" media="print" onload="this.media='all'">
+     <link rel="preload" href="resources/css/style.min.css" as="style">
+     <link rel="stylesheet" href="resources/css/style.min.css">
 </head>
 
 <body class="sobre-time">
      <nav class="navbar">
           <div class="nav-brand">
-               <img src="vendors/img/logo.png" alt="Logo" class="brand-logo" />
+               <img src="vendors/img/logo.png" alt="Logo" class="brand-logo" / loading="lazy" decoding="async">
                <span class="brand-name"><a class="logo-name" href="index.html">WARFRAME</a></span>
           </div>
           <input type="checkbox" id="nav-toggle" class="nav-toggle" />
@@ -23,73 +24,109 @@
                <span></span>
           </label>
           <ul class="nav-links">
-               <li><a href="#novidades">Novidades</a></li>
-               <li><a href="#jogo">Jogo</a></li>
-               <li><a href="#comunidade">Comunidade</a></li>
-               <li><a href="#guias">Guias</a></li>
+               <li><a href="index.html#historia">História</a></li>
+               <li><a href="index.html#personagens">Personagens</a></li>
+               <li><a href="index.html#reviews">Reviews</a></li>
+               <li><a href="index.html#comunidade">Comunidade</a></li>
                <li><a href="download.html" class="btn-nav">JOGUE GRATUITAMENTE</a></li>
           </ul>
      </nav>
-     <div class="team-section">
-          <h2 class="conheca-time">Conheça os lideres por trás do jogo</h2>
-          <div class="team-members">
-               <div class="team-member">
-                    <img src="vendors/img/equipe/william.jpg" alt="Líder de Desenvolvimento" class="member-photo" />
-                    <h3>William Tavares de Moura</h3>
-                    <p>Líder de Desenvolvimento</p>
+     <!-- Hero Section -->
+     <section class="team-hero">
+          <div class="team-hero-content">
+               <h1 class="team-hero-title">NOSSO TIME</h1>
+               <p class="team-hero-subtitle">Os visionários por trás da experiência WARFRAME</p>
+          </div>
+     </section>
+
+     <!-- Team Leaders Section -->
+     <section class="team-leaders-section">
+          <div class="section-header">
+               <h2 class="section-title">LÍDERES</h2>
+               <div class="title-underline"></div>
+          </div>
+          <div class="team-grid">
+               <div class="team-card">
+                    <div class="card-image-wrapper">
+                         <img src="vendors/img/equipe/william.jpg" alt="Líder de Desenvolvimento" class="card-image" / loading="lazy" decoding="async">
+                         <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                         <h3 class="member-name">William Tavares de Moura</h3>
+                         <p class="member-role">Líder de Desenvolvimento</p>
+                    </div>
                </div>
-               <div class="team-member">
-                    <img src="vendors/img/equipe/thiago.jpg" alt="Designer UX/UI" class="member-photo" />
-                    <h3>Thiago Schiedeck Dias da Silveira</h3>
-                    <p>Líder da Equipe de Desing</p>
+               <div class="team-card">
+                    <div class="card-image-wrapper">
+                         <img src="vendors/img/equipe/thiago.jpg" alt="Designer UX/UI" class="card-image" / loading="lazy" decoding="async">
+                         <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                         <h3 class="member-name">Thiago Schiedeck Dias</h3>
+                         <p class="member-role">Líder da Equipe de Design</p>
+                    </div>
                </div>
-               <div class="team-member">
-                    <img src="vendors/img/equipe/bruno.jpeg" alt="Chefe de Marketing" class="member-photo" />
-                    <h3>Bruno Valim Fiorin Santin</h3>
-                    <p>Chefe de Marketing</p>
+               <div class="team-card">
+                    <div class="card-image-wrapper">
+                         <img src="vendors/img/equipe/bruno.jpeg" alt="Chefe de Marketing" class="card-image" / loading="lazy" decoding="async">
+                         <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                         <h3 class="member-name">Bruno Valim Fiorin</h3>
+                         <p class="member-role">Chefe de Marketing</p>
+                    </div>
                </div>
           </div>
-     </div>
-     <div class="por_tras_do_jogo">
-          <h2>Por Trás do Jogo</h2>
-          <div class="desenvolvimento">
-               <p>Nosso time dedicado de desenvolvedores, designers e especialistas em marketing trabalha
-                    incansavelmente
-                    para trazer a você a melhor experiência possível em WARFRAME. Desde a concepção inicial até o
-                    lançamento
-                    contínuo de atualizações, cada membro da equipe contribui com sua paixão e expertise para criar um
-                    universo envolvente e dinâmico. Estamos comprometidos em ouvir nossa comunidade e evoluir o jogo com
-                    base no feedback dos jogadores, garantindo que WARFRAME continue a ser um lugar onde todos possam se
-                    divertir e explorar.</p>
-               <ul class="img_time">
-                    <li><img src="vendors/img/equipe/will_thiago.jpg" alt="Lider de desenvolvimento e Lider de design"
-                              class="time_desenvolvimento" /></li>
-                    <li><img src="vendors/img/equipe/sala_de_desenvolvimento.jpg" alt="Sala de Desenvolvimento"
-                              class="time_desenvolvimento" /></li>
-                    <li><img src="vendors/img/equipe/codigo.jpg" alt="Processo de Desenvolvimento"
-                              class="time_desenvolvimento" /></li>
-                    <li><img src="vendors/img/equipe/equipe.jpg" alt="Equipe de desenvolvimento e de designers"
-                              class="time_desenvolvimento" /></li>
-               </ul>
+     </section>
+
+     <!-- Behind the Game Section -->
+     <section class="behind-game-section">
+          <div class="section-header">
+               <h2 class="section-title">POR TRÁS DO JOGO</h2>
+               <div class="title-underline"></div>
           </div>
-     </div>
+          <div class="behind-content">
+               <p class="behind-description">
+                    Nosso time dedicado de desenvolvedores, designers e especialistas em marketing trabalha
+                    incansavelmente para trazer a você a melhor experiência possível em WARFRAME. Desde a concepção
+                    inicial até o lançamento contínuo de atualizações, cada membro da equipe contribui com sua paixão
+                    e expertise para criar um universo envolvente e dinâmico. Estamos comprometidos em ouvir nossa
+                    comunidade e evoluir o jogo com base no feedback dos jogadores, garantindo que WARFRAME continue
+                    a ser um lugar onde todos possam se divertir e explorar.
+               </p>
+               <div class="gallery-grid">
+                    <div class="gallery-item">
+                         <img src="vendors/img/equipe/will_thiago.jpg" alt="Lider de desenvolvimento e Lider de design" class="gallery-image" / loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                         <img src="vendors/img/equipe/sala_de_desenvolvimento.jpg" alt="Sala de Desenvolvimento" class="gallery-image" / loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                         <img src="vendors/img/equipe/codigo.jpg" alt="Processo de Desenvolvimento" class="gallery-image" / loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                         <img src="vendors/img/equipe/equipe.jpg" alt="Equipe de desenvolvimento e de designers" class="gallery-image" / loading="lazy" decoding="async">
+                    </div>
+               </div>
+          </div>
+     </section>
      <footer>
           <div class="footer-content">
                <bold class="conect">CONECTE-SE COM OS OUTROS TENNOS</bold>
                <hr>
                <div class="img-jogo-classificacao">
-                    <img src="vendors/img/logo.png" alt="Logo" class="footer-logo" />
-                    <img src="vendors/img/classificacaoJogo.png" alt="Classificação do Jogo" class="rating-logo" />
+                    <img src="vendors/img/logo.png" alt="Logo" class="footer-logo" / loading="lazy" decoding="async">
+                    <img src="vendors/img/classificacaoJogo.png" alt="Classificação do Jogo" class="rating-logo" / loading="lazy" decoding="async">
                </div>
                <ul class="console-links">
-                    <li><a href="#"><img src="vendors/img/steam.png" alt="Steam" class="steam" /></a></li>
-                    <li><a href="#"><img src="vendors/img/epic_sem_fundo.png" alt="Epic Games" class="epic" /></a></li>
-                    <li><a href="#"><img src="vendors/img/xbox-one.png" alt="Xbox One" class="xbox" /></a></li>
-                    <li><a href="#"><img src="vendors/img/playstation.png" alt="PlayStation" class="playstation" /></a>
+                    <li><a href="#"><img src="vendors/img/steam.png" alt="Steam" class="steam" / loading="lazy" decoding="async"></a></li>
+                    <li><a href="#"><img src="vendors/img/epic_sem_fundo.png" alt="Epic Games" class="epic" / loading="lazy" decoding="async"></a></li>
+                    <li><a href="#"><img src="vendors/img/xbox-one.png" alt="Xbox One" class="xbox" / loading="lazy" decoding="async"></a></li>
+                    <li><a href="#"><img src="vendors/img/playstation.png" alt="PlayStation" class="playstation" / loading="lazy" decoding="async"></a>
                     </li>
-                    <li><a href="#"><img src="vendors/img/nintendo.png" alt="Nintendo Switch" class="nintendo" /></a>
+                    <li><a href="#"><img src="vendors/img/nintendo.png" alt="Nintendo Switch" class="nintendo" / loading="lazy" decoding="async"></a>
                     </li>
-                    <li><a href="#"><img src="vendors/img/app-store.png" alt="App Store" class="app-store" /></a></li>
+                    <li><a href="#"><img src="vendors/img/app-store.png" alt="App Store" class="app-store" / loading="lazy" decoding="async"></a></li>
                </ul>
                <ul class="footer-links">
                     <li><a href="#">Suporte</a></li>
