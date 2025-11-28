@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Suporte - WARFRAME</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="support-page">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="vendors/img/logo.png" alt="Logo" class="brand-logo" />
+            <span class="brand-name"><a class="logo-name" href="index.html">WARFRAME</a></span>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="updates.html">Atualizações</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="download.html" class="btn-nav">JOGUE GRATUITAMENTE</a></li>
+        </ul>
+        </ul>
+    </nav>
+
+    <main class="community-section support-section">
+        <div class="community-container support-wrapper">
+            <section class="support-hero">
+                <div class="support-hero__badge">SUPPORT</div>
+                <h1>Centro de Suporte</h1>
+                <p>Envie o formulário abaixo e nossa equipe retornará em até 24-48h. Traga o máximo de detalhes para que possamos resolver a sua solicitação com rapidez.</p>
+            </section>
+
+            <section class="community-form-wrapper support-card">
+                <div class="support-card__header">
+                    <div>
+                        <p class="support-label">Atendimento oficial</p>
+                        <h2>Enviar um novo ticket</h2>
+                        <p>Preencha os campos abaixo com informações completas para acelerar o atendimento.</p>
+                    </div>
+                    <a href="download.html" class="note-link">Voltar ao download</a>
+                </div>
+
+                <form class="support-form community-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Primeiro Nome</label>
+                            <input id="firstName" type="text" name="firstName" placeholder="Digite seu primeiro nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Sobrenome</label>
+                            <input id="lastName" type="text" name="lastName" placeholder="Digite seu sobrenome" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" placeholder="seuemail@exemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input id="phone" type="tel" name="phone" placeholder="(11) 99999-9999">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Selecione</option>
+                                <option value="general">Dúvida Geral</option>
+                                <option value="account">Conta e Login</option>
+                                <option value="purchase">Compras</option>
+                                <option value="bug">Bug ou Erro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="incidentDate">Data do incidente</label>
+                            <input id="incidentDate" type="date" name="incidentDate">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Categoria</label>
+                        <div class="category-chips">
+                            <label><input type="radio" name="category" value="tech" checked> Técnico</label>
+                            <label><input type="radio" name="category" value="billing"> Cobrança</label>
+                            <label><input type="radio" name="category" value="gaming"> Jogo</label>
+                            <label><input type="radio" name="category" value="other"> Outro</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attachment">Anexar Arquivo (opcional)</label>
+                        <div class="file-upload">
+                            <div class="file-upload__icon">📁</div>
+                            <div class="file-upload__content">
+                                <p>Envie capturas de tela, vídeos ou logs (.png, .mp4, .csv, .docx, .pdf)</p>
+                                <input id="attachment" type="file" name="attachment" aria-label="Anexar arquivo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Descreva o problema ou solicitação com detalhes"></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            <span>Concordo com os Termos de Serviço e Política de Privacidade.</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="support-submit">Enviar Ticket</button>
+                </form>
+
+                <div class="support-note">
+                    <div>
+                        <p>Tempo estimado de resposta: 24-48h</p>
+                        <span>Nosso time de suporte monitora todas as solicitações diariamente.</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <bold class="conect">CONECTE-SE COM OS OUTROS TENNOS</bold>
+            <hr>
+            <div class="img-jogo-classificacao">
+                <img src="vendors/img/logo.png" alt="Logo" class="footer-logo" />
+                <img src="vendors/img/classificacaoJogo.png" alt="Classificação do Jogo" class="rating-logo" />
+            </div>
+            <ul class="console-links">
+                <li><a href="#"><img src="vendors/img/steam.png" alt="Steam" class="steam" /></a></li>
+                <li><a href="#"><img src="vendors/img/epic_sem_fundo.png" alt="Epic Games" class="epic" /></a></li>
+                <li><a href="#"><img src="vendors/img/xbox-one.png" alt="Xbox One" class="xbox" /></a></li>
+                <li><a href="#"><img src="vendors/img/playstation.png" alt="PlayStation" class="playstation" /></a></li>
+                <li><a href="#"><img src="vendors/img/nintendo.png" alt="Nintendo Switch" class="nintendo" /></a></li>
+                <li><a href="#"><img src="vendors/img/app-store.png" alt="App Store" class="app-store" /></a></li>
+            </ul>
+            <ul class="footer-links">
+                <li><a href="support.html">Suporte</a></li>
+                <li><a href="#">Imprensa</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Termos de Serviço</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="sobre_time.html">Sobre o time</a></li>
+            </ul>
+            <p class="copyright">&copy; 2025 WARFRAME. Todos os direitos reservados. Todas as marcas registradas são propriedades de seus donos.</p>
+        </div>
+    </footer>
+</body>
+</html>

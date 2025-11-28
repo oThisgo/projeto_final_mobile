@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizações - Warframe</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&family=Stack+Sans+Notch:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="vendors/img/logo.png" alt="Logo" class="brand-logo" />
+            <span class="brand-name"><a class="logo-name" href="index.html">WARFRAME</a></span>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="support.html">Suporte</a></li>
+            <li><a href="download.html" class="btn-nav">JOGUE GRATUITAMENTE</a></li>
+        </ul>
+    </nav>
+
+    <main class="updates-page">
+        <section class="updates-hero">
+            <div class="updates-hero-overlay"></div>
+            <img src="resources/img/timeline-2019.webp" alt="Agents preparing for mission" class="updates-hero-image">
+            <div class="updates-hero-content">
+                <span class="hero-badge">UPDATES</span>
+                <h1>Latest Update: Season 5 - Ascension</h1>
+                <p>Introducing two new Agents, a reworked map, and a complete overhaul of the competitive ranking system.</p>
+                <a href="#" class="hero-action">Read Full Notes</a>
+            </div>
+        </section>
+
+        <section class="updates-controls">
+            <label class="search-wrapper">
+                <span class="visually-hidden">Buscar notas</span>
+                <select class="updates-search" aria-label="Selecionar intervalo de patch">
+                    <option selected>Filtrar por categoria</option>
+                    <option>Atualizações gerais</option>
+                    <option>Balanceamento de agentes</option>
+                    <option>Alterações em mapas</option>
+                    <option>Correções de bugs</option>
+                </select>
+            </label>
+            <div class="updates-filters" role="tablist">
+                <button class="filter-chip active" type="button">Todas</button>
+                <button class="filter-chip" type="button">Agentes</button>
+                <button class="filter-chip" type="button">Mapas</button>
+                <button class="filter-chip" type="button">Competitivo</button>
+                <button class="filter-chip" type="button">Correções</button>
+            </div>
+        </section>
+
+        <section class="patch-cards">
+            <details class="patch-card" open>
+                <summary class="patch-header">
+                    <h2>Patch 5.02 - Agent Balance & Bug Fixes | October 17, 2023</h2>
+                    <span class="patch-toggle" aria-hidden="true">&#9660;</span>
+                </summary>
+                <div class="patch-body">
+                    <p><strong>Agent balance:</strong> Updated abilities and cooldown adjustments focused on temporal manipulation. Includes new visual effect and class attribute changes.</p>
+                    <p><strong>Map changes:</strong> Added secret passages to "Ascendant" section of the map "Azura", and a new defensive cover on "Ironclad".</p>
+                    <p><strong>Competitive updates:</strong></p>
+                    <ul>
+                        <li>Introduced the "Ascendant" rank between Diamond and Immortal.</li>
+                        <li>Updated match rewards and penalties to better reflect placement.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="patch-card">
+                <summary class="patch-header">
+                    <h2>Patch 5.01 - Hotfix for Map Exploits | October 10, 2023</h2>
+                    <span class="patch-toggle" aria-hidden="true">&#9660;</span>
+                </summary>
+                <div class="patch-body">
+                    <p><strong>Exploit fixes:</strong> Patched an issue where players could use abilities to exit the playable area on "Zephyr" map.</p>
+                    <p><strong>Quality of life:</strong> Adjusted visual indicators for traps in the "Obsidian Caverns" section.</p>
+                </div>
+            </details>
+
+            <details class="patch-card">
+                <summary class="patch-header">
+                    <h2>Patch 5.00 - Season 5 Launch | October 3, 2023</h2>
+                    <span class="patch-toggle" aria-hidden="true">&#9660;</span>
+                </summary>
+                <div class="patch-body">
+                    <p><strong>Welcome to Season 5: Ascension.</strong> Highlights include featuring a new agent, a complete overhaul of the map "Azura", and a brand new competitive ranking system.</p>
+                    <p><strong>New content:</strong></p>
+                    <ul>
+                        <li><strong>Agent: Vesper</strong> - Sentinel class with abilities focused on temporal manipulation and control.</li>
+                        <li><strong>New Map: Azure Rift</strong> - A massive map set within a fractured floating metropolis.</li>
+                    </ul>
+                    <p><strong>Competitive updates:</strong></p>
+                    <ul>
+                        <li>Introduced the "Ascendant" rank between Diamond and Immortal.</li>
+                        <li>Updated match rewards and penalties to better reflect placement.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+    </main>
+</body>
+
+</html>
