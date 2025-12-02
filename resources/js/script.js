@@ -1,79 +1,122 @@
 $(function(){
 
-    // Accordion da timeline (garante execução após DOM pronto)
-    // Accordion removido: timeline sempre aberta
-
-        // Linha do tempo: carrossel arrastável no mobile
-        const timeline = document.querySelector('.timeline-container');
-        if (timeline && window.matchMedia('(max-width: 700px)').matches) {
-            let isDown = false;
-            let startX, scrollLeft;
-
-            timeline.addEventListener('mousedown', (e) => {
-                isDown = true;
-                timeline.classList.add('dragging');
-                startX = e.pageX - timeline.offsetLeft;
-                scrollLeft = timeline.scrollLeft;
-            });
-            timeline.addEventListener('mouseleave', () => {
-                isDown = false;
-                timeline.classList.remove('dragging');
-            });
-            timeline.addEventListener('mouseup', () => {
-                isDown = false;
-                timeline.classList.remove('dragging');
-            });
-            timeline.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - timeline.offsetLeft;
-                const walk = (x - startX) * 1.2; // scroll speed
-                timeline.scrollLeft = scrollLeft - walk;
-            });
-            // Touch events
-            timeline.addEventListener('touchstart', (e) => {
-                isDown = true;
-                startX = e.touches[0].pageX - timeline.offsetLeft;
-                scrollLeft = timeline.scrollLeft;
-            });
-            timeline.addEventListener('touchend', () => {
-                isDown = false;
-            });
-            timeline.addEventListener('touchmove', (e) => {
-                if (!isDown) return;
-                const x = e.touches[0].pageX - timeline.offsetLeft;
-                const walk = (x - startX) * 1.2;
-                timeline.scrollLeft = scrollLeft - walk;
-            });
-        }
-
-    const $icon = $('.js--mobile-nav-icon');
-    const $nav = $('.js--main-nav');
-
-    $icon.on('click', function(){
-        $nav.slideToggle(200);
-
-    const expanded = $(this).attr('aria-expanded') === 'true';
-        $(this).attr('aria-expanded', (!expanded).toString());
-
-        // Alterna o ícone (Ionicons)
-    const $i = $(this).find('ion-icon');
-        if ($i.length){
-            $i.attr('name', expanded ? 'menu-outline' : 'close-outline');
-        }
-    });
-
-    // Ao redimensionar para desktop, remove estilos inline para voltar ao CSS
-    $(globalThis).on('resize', function(){
-        if (globalThis.innerWidth > 790){
-            $nav.removeAttr('style');
-            $icon.attr('aria-expanded', 'false');
-            const $i = $icon.find('ion-icon');
-            if ($i.length){
-                $i.attr('name', 'menu-outline');
+    // Auto-play de carrossel: avança automaticamente pelos cards
+    function addAutoPlay(container, cardSelector) {
+        if (!container) return;
+        
+        let isAutoPlaying = true;
+        let autoPlayInterval;
+        let currentIndex = 0;
+        
+        const startAutoPlay = () => {
+            if (!isAutoPlaying) return;
+            
+            autoPlayInterval = setInterval(() => {
+                if (!isAutoPlaying) {
+                    clearInterval(autoPlayInterval);
+                    return;
+                }
+                
+                const cards = container.querySelectorAll(cardSelector);
+                if (cards.length === 0) return;
+                
+                const containerWidth = container.offsetWidth;
+                const maxScroll = container.scrollWidth - containerWidth;
+                
+                // Avança para o próximo card
+                currentIndex++;
+                
+                // Se passou do último card, volta pro início
+                if (currentIndex >= cards.length) {
+                    currentIndex = 0;
+                }
+                
+                // Calcula posição baseada no índice
+                let nextScroll = currentIndex * containerWidth * 0.9;
+                
+                // Garante que não ultrapasse o máximo
+                if (nextScroll > maxScroll) {
+                    nextScroll = 0;
+                    currentIndex = 0;
+                }
+                
+                container.scrollTo({
+                    left: nextScroll,
+                    behavior: 'smooth'
+                });
+                
+            }, 3000); // Troca a cada 3 segundos
+        };
+        
+        const stopAutoPlay = () => {
+            isAutoPlaying = false;
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
             }
-        }
-    });
+        };
+        
+        // Para quando usuário interagir
+        container.addEventListener('touchstart', stopAutoPlay, { once: true });
+        container.addEventListener('mousedown', stopAutoPlay, { once: true });
+        container.addEventListener('wheel', stopAutoPlay, { once: true });
+        
+        // Inicia após 2 segundos
+        setTimeout(startAutoPlay, 2000);
+    }
+
+    // Linha do tempo: carrossel arrastável no mobile
+    const timeline = document.querySelector('.timeline-container');
+    if (timeline && window.matchMedia('(max-width: 700px)').matches) {
+        let isDown = false;
+        let startX, scrollLeft;
+
+        // Adiciona auto-play
+        addAutoPlay(timeline, '.timeline-event');
+
+        timeline.addEventListener('mousedown', (e) => {
+            isDown = true;
+            timeline.classList.add('dragging');
+            startX = e.pageX - timeline.offsetLeft;
+            scrollLeft = timeline.scrollLeft;
+        });
+        timeline.addEventListener('mouseleave', () => {
+            isDown = false;
+            timeline.classList.remove('dragging');
+        });
+        timeline.addEventListener('mouseup', () => {
+            isDown = false;
+            timeline.classList.remove('dragging');
+        });
+        timeline.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - timeline.offsetLeft;
+            const walk = (x - startX) * 1.2;
+            timeline.scrollLeft = scrollLeft - walk;
+        });
+        
+        // Touch events para mobile
+        timeline.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - timeline.offsetLeft;
+            scrollLeft = timeline.scrollLeft;
+        });
+        timeline.addEventListener('touchend', () => {
+            isDown = false;
+        });
+        timeline.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - timeline.offsetLeft;
+            const walk = (x - startX) * 1.2;
+            timeline.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    // Reviews: adiciona auto-play no mobile
+    const reviewsContainer = document.querySelector('.reviews-container');
+    if (reviewsContainer && window.matchMedia('(max-width: 700px)').matches) {
+        addAutoPlay(reviewsContainer, '.review-card');
+    }
 
     // Abas de requisitos do sistema
     const tabs = document.querySelectorAll('.tab');
